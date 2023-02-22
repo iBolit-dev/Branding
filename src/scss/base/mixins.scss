@@ -8,6 +8,14 @@
 		font-style: #{$style};
 	}
 }
+
+//landspace
+@mixin hl {
+	@media (max-height: 575px) and (orientation: landscape) {
+		@content;
+	}
+}
+
 //Percent
 @function percent($px, $from) {
 	$result: math.div($px, $from) * 100%;
@@ -88,7 +96,10 @@
 		}
 		// Якщо не підтримується clamp();
 		@supports not (#{$property}: $propertyValue) {
-			#{$property}: calc(#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+			#{$property}: calc(
+				#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) -
+					math.div($widthTo, 16)}
+			);
 		}
 	}
 	@if $keepSize != 1 and $keepSize != 2 {
