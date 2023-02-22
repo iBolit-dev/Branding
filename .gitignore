@@ -1,5 +1,6 @@
 phpmailer/
 package-lock.json
+<<<<<<< HEAD
 flsStartTemplate/
 node_modules/
 dist/
@@ -8,3 +9,14 @@ version.json
 undefined
 **/*.zip
 **/*.rar
+=======
+Source/
+node_modules/
+flsStartTemplate/
+.gitignore
+dist/
+version.json
+undefined
+**/*.zip
+**/*.rar
+>>>>>>> main
