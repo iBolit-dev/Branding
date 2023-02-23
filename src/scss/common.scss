@@ -35,3 +35,39 @@
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+// social link
+
+.social {
+    display: flex;
+    // .social__item
+    &__item {
+        &:not(:last-child) {
+            margin-right: rem(30);
+        }
+    }
+
+    // .social__link
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $yellowColor;
+        padding: 8px 10px;
+        border-radius: 6px;
+        transition: opacity 0.3s;
+
+        svg {
+            fill: #000;
+            max-width: 21px;
+            max-height: 20px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}
