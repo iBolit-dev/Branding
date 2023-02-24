@@ -7,25 +7,11 @@
     @include hl {
         margin-bottom: rem(40);
     }
-    // .video__container
-
-    &__container {
-    }
 
     // .video__top
 
     &__top {
         @include adaptiveValue("margin-bottom", 40, 20);
-    }
-
-    // .video__title
-
-    &__title {
-    }
-
-    // .video__text
-
-    &__text {
     }
 
     // .video__content
