@@ -2,24 +2,39 @@
 
 .section {
     &__title {
-        font-size: rem(72);
+        @include adaptiveValue("font-size", 72, 28);
         font-weight: 700;
         line-height: math.div(88, 72);
+        color: #fff;
+
         &--small {
             font-weight: 600;
-            font-size: rem(48);
+            @include adaptiveValue("font-size", 48, 25);
             line-height: math.div(59, 48);
+
+            @include hl {
+                font-size: rem(25);
+            }
         }
+
         span {
             color: $yellowColor;
+        }
+
+        @include hl {
+            font-size: rem(28);
         }
     }
 
     &__subtitle {
-        font-size: rem(32);
+        @include adaptiveValue("font-size", 32, 20);
         font-weight: 300;
         line-height: math.div(39, 32);
         color: $subtitleGrey;
+
+        @include hl {
+            font-size: rem(20);
+        }
     }
 }
 
@@ -34,4 +49,73 @@
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+
+// social link
+
+.social {
+    display: flex;
+    // .social__item
+    &__item {
+        &:not(:last-child) {
+            margin-right: rem(30);
+        }
+    }
+
+    // .social__link
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $yellowColor;
+        padding: 8px 10px;
+        border-radius: 6px;
+        transition: opacity 0.3s;
+
+        svg {
+            fill: #000;
+            max-width: 21px;
+            max-height: 20px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+.btn {
+    font-weight: 800;
+    @include adaptiveValue("font-size", 20, 15);
+    background-color: $yellowColor;
+    position: relative;
+    @include adaptiveValue("padding-top", 20, 15);
+    @include adaptiveValue("padding-right", 33, 24);
+    @include adaptiveValue("padding-bottom", 20, 15);
+    @include adaptiveValue("padding-left", 32, 23);
+    transition: background-color 0.3s, filter 0.3s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $yellowColor;
+        filter: blur(5.5px);
+        z-index: -1;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #f4de8d;
+            &::before {
+                filter: blur(7.5px);
+            }
+        }
+    }
 }
