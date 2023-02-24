@@ -108,3 +108,10 @@
 		}
 	}
 }
+
+@mixin size ($maxWidth, $maxHeight, $minWidth, $minHeight) {
+  $addWidth: $maxWidth - $minWidth;
+  $addHeight: $maxHeight - $minHeight;
+  width: calc(#{$minWidth + px} + #{$addWidth} * ((100vw - 375px) / (1440 - 375)));
+  height: calc(#{$minHeight + px} + #{$addHeight} * ((100vw - 375px) / (1440 - 375)));
+}
