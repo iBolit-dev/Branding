@@ -1,4 +1,95 @@
 <header class="header">
-	<div class="header__container">
-	</div>
+  <div class="header__container">
+    <div class="header__wrapper">
+
+      <div class="header__search search">
+        <form class="search__form">
+          <span class="search__icon">
+            <svg class="search__img">
+              <use xlink:href="@img/icons/icons.svg#lupa"></use>
+            </svg>
+          </span>
+          <input class="search__input" type="text" placeholder="Поиск" required>
+          <button class="search__btn" type="submit">
+            <svg class="search__btn-img">
+              <use xlink:href="@img/icons/icons.svg#lupa"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="header__logo">
+        <a class="header__link" href="#">
+          <img class="header__logo-img" src="@img/header/logo.png" alt="logo">
+        </a>
+      </div>
+
+      <div class="header__right">
+        <div class="header__language language" data-da=".menu__body,767">
+          <div class="language__wrapper">
+            <button class="language__btn language__btn--active">
+              RU
+            </button>
+            <button class="language__btn">
+              UA
+            </button>
+          </div>
+        </div>
+
+        <div class="language__favorites" data-da=".menu__body,478">
+          <button class="language__favorites-btn">
+            <img src="@img/header/cart.svg" alt="cart">
+          </button>
+          <button class="language__favorites-btn">
+            <img src="@img/header/like.svg" alt="likes">
+          </button>
+        </div>
+
+        <button type="button" class="menu__icon icon-menu"><span></span></button>
+
+      </div>
+
+    </div>
+    <div class="header__menu menu">
+      <nav class="menu__body">
+        <ul class="menu__list">
+          <li class="menu__item menu__item--active">
+            <a href="" class="menu__link">
+              Категория
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">
+              Категория
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">
+              Категория
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">
+              Категория
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">
+              Категория
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">
+              Категория
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">
+              Категория
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
