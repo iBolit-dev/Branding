@@ -7,6 +7,17 @@ import {
   flsModules
 } from "./modules.js";
 
+const scrollHeader = document.querySelector('.header');
+const scrollHeight = 1; // высота, на которой добавляется класс
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > scrollHeight) {
+    scrollHeader.classList.add('scroll');
+  } else {
+    scrollHeader.classList.remove('scroll');
+  }
+});
+
 let button = document.querySelector('.search__icon');
 let user = document.querySelector('.search');
 

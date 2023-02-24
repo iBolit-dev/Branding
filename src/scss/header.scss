@@ -2,16 +2,20 @@
 .header {
   z-index: 100;
   position: fixed;
-  background-color: #070707;
   width: 100%;
   top: 0;
   left: 0;
   padding-top: rem(20);
   padding-bottom: rem(30);
+  transition: background-color 0.5s ease-in-out;
 
-  @media (max-width:$mobile){
-     padding-top: rem(0); 
-     padding-bottom: rem(0);
+  &.scroll {
+    background-color: #070707;
+  }
+
+  @media (max-width:$mobile) {
+    padding-top: rem(0);
+    padding-bottom: rem(0);
   }
 
 
