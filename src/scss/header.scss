@@ -1,5 +1,24 @@
 //====================================================================================================
 .header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: rem(20);
+  padding-bottom: rem(30);
+  transition: background-color 0.5s ease-in-out;
+
+  &.scroll {
+    background-color: #070707;
+  }
+
+  @media (max-width:$mobile) {
+    padding-top: rem(0);
+    padding-bottom: rem(0);
+  }
+
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -37,7 +56,9 @@
     align-items: center;
   }
 
-  &__menu {}
+  &__menu {
+    padding: 0 rem(40);
+  }
 }
 
 .search {
