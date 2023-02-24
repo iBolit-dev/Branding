@@ -1,8 +1,57 @@
 //====================================================================================================
+// video
+
+.video {
+    @include adaptiveValue("margin-bottom", 260, 40, 0, 1920, 768);
+
+    @include hl {
+        margin-bottom: rem(40);
+    }
+    // .video__container
+
+    &__container {
+    }
+
+    // .video__top
+
+    &__top {
+        @include adaptiveValue("margin-bottom", 40, 20);
+    }
+
+    // .video__title
+
+    &__title {
+    }
+
+    // .video__text
+
+    &__text {
+    }
+
+    // .video__content
+
+    &__content {
+        max-width: 915px;
+        @include adaptiveValue("height", 515, 215);
+        margin: 0 auto;
+
+        @include hl {
+            width: rem(420);
+            height: rem(250);
+        }
+    }
+
+    &__play {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//====================================================================================================
 // contact
 
 .contact {
-    @include adaptiveValue("margin-bottom", 154, 45);
+    @include adaptiveValue("margin-bottom", 154, 40, 0, 1920, 768);
 
     // .contact__top
 
@@ -10,7 +59,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        @include adaptiveValue("margin-bottom", 195, 30);
+        @include adaptiveValue("margin-bottom", 195, 35, 0, 1920, 768);
 
         @include hl {
             margin-bottom: rem(40);
@@ -21,7 +70,7 @@
 
     &__content {
         display: flex;
-        @include adaptiveValue("margin-bottom", 227, 30);
+        @include adaptiveValue("margin-bottom", 227, 30, 0, 1920, 768);
         justify-content: space-between;
         @media (max-width: $mobile) {
             flex-wrap: wrap;
