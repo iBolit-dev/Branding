@@ -46,10 +46,11 @@
   &__link,
   &__logo-img {
     display: inline-block;
-    @include size (184, 63, 117, 40)
+    @include size(184, 63, 117, 40);
   }
 
-  &__logo-img {}
+  &__logo-img {
+  }
 
   &__right {
     display: flex;
@@ -97,7 +98,7 @@
       color: #fff;
     }
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       padding-left: rem(45);
       width: rem(0);
       transition: width 0.3s;
@@ -112,7 +113,7 @@
     width: rem(15);
     height: rem(15);
     fill: $yellowColor;
-    transform: translate(15%, -55%)
+    transform: translate(15%, -55%);
   }
 
   &__btn-img {
@@ -120,7 +121,6 @@
     height: rem(15);
     fill: #fff;
   }
-
 }
 
 .language {
@@ -145,7 +145,7 @@
       position: relative;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: -50%;
@@ -170,11 +170,11 @@
     display: flex;
     z-index: 2;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       @include adaptiveValue("margin-right", 20, 10);
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       position: absolute;
       left: rem(20);
       z-index: 2;
@@ -195,22 +195,21 @@
     }
   }
 
-  @media (max-width:$mobile) {
+  @media (max-width: $mobile) {
     z-index: 2;
     position: absolute;
     left: rem(20);
     top: rem(20);
   }
 
-  @media (max-width:$mobileSmall) {
+  @media (max-width: $mobileSmall) {
     top: rem(80);
   }
 }
 
 .menu {
-
   &__body {
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       position: fixed;
       top: rem(70);
       left: -100%;
@@ -225,7 +224,7 @@
       transition: left 0.5s;
 
       &::before {
-        content: '';
+        content: "";
         position: fixed;
         top: 0;
         left: 0;
@@ -245,45 +244,40 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    column-gap: rem(50);
+    @include adaptiveValue("column-gap", 50, 25);
     row-gap: rem(30);
     font-weight: 300;
     font-size: rem(18);
     line-height: math.div(22, 18);
     color: #fff;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       flex-direction: column;
       margin: rem(0) rem(30) rem(0) rem(0);
     }
+  }
+  &__item {
   }
 
   &__item--active {
     font-weight: 700;
     color: #090909;
     position: relative;
+    background-color: #fff;
+    transform: skew(345deg);
+    padding-top: rem(13);
+    padding-bottom: rem(16);
+    @include adaptiveValue("padding-left", 31, 25);
+    @include adaptiveValue("padding-right", 31, 25);
 
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      top: -50%;
-      left: -30%;
-      background-color: #fff;
-      width: rem(164);
-      height: rem(51);
-      transform: matrix(1, 0, -0.4, 1, 0, -3);
-
-      @media (max-width:$mobile) {
-        top: -30%;
-        left: -10%;
-      }
+    .menu__link {
+      transform: skew(-345deg);
     }
   }
 
   &__link {
-    @media (max-width:$mobile) {
+    display: inline-block;
+    @media (max-width: $mobile) {
       font-size: rem(24);
     }
 
@@ -295,12 +289,10 @@
       }
     }
   }
-
 }
 
 .search-active {
-
-  @media (max-width:$mobile) {
+  @media (max-width: $mobile) {
     position: absolute;
     width: 95%;
     height: rem(60);
@@ -330,7 +322,6 @@
     }
   }
 }
-
 
 //====================================================================================================
 
@@ -380,7 +371,8 @@
       }
 
       &::before,
-      &::after {}
+      &::after {
+      }
 
       &::before {
         top: calc(50% - rem(1));
