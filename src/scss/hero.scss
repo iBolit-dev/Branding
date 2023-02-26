@@ -2,6 +2,8 @@
   background: url("@img/firstSection/bg.jpg") center center no-repeat;
   background-size: cover;
   min-height: 100vh;
+  @include adaptiveValue("margin-bottom", 152, 60);
+
 
   &__wrapper {
     &::before {

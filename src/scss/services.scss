@@ -1,0 +1,91 @@
+.services {
+  text-align: center;
+  color: #f0f0f0;
+  @include adaptiveValue("margin-bottom", 223, 80);
+
+  &__subtitle {
+    margin-bottom: 85px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptiveValue("column-gap", 42, 20, 0, 1440, 992);
+    @include adaptiveValue("row-gap", 159, 90, 1440, 992);
+    margin-bottom: rem(120);
+
+    @media (max-width:$pc) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width:$mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+  }
+
+  &__item {
+    padding: rem(33) rem(68) rem(138);
+    height: 383px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-self: center;
+    @include adaptiveValue("width", 334px, 294, 0, 1440, 768);
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 0 80%);
+      background-color: #0E0E0E;
+    }
+
+    @media (max-width:$tablet) {
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+
+  &__item-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: math.div(29, 24);
+    max-width: 188px;
+    margin-bottom: rem(15);
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: rem(16);
+    line-height: math.div(20, 16);
+    margin-bottom: rem(20);
+  }
+
+  &__btn {
+    background-color: #171717;
+    padding: rem(15) rem(26);
+    color: #ffc700;
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: math.div(20, 16);
+    margin-bottom: rem(45);
+  }
+
+  &__img {
+    width: rem(133);
+    height: rem(133);
+  }
+
+  &__btn-show {
+    @media (min-width:$tablet) {
+      display: none;
+    }
+  }
+}
