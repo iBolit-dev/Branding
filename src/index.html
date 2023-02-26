@@ -5,33 +5,33 @@
 })
 
 <body>
-  <div class="wrapper">
-    @@include('html/_header.htm',{})
-    <main class="page">
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
 
-      <section class="hero section">
-        <div class='hero__container'>
-          <div class="hero__wrapper">
-            <div class="hero__content">
-              <h1 class="hero__title">
-                masons
-                <span>
-                  branding
-                </span>
-                wordshop
-              </h1>
-              <p class="hero__txt">
-                Высококачественная печать Брендирование одежды и аксессуаров
-              </p>
-              <button class="hero__btn btn" type="btn">
-                Каталог
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section services">
+			<section class="hero section">
+				<div class='hero__container'>
+					<div class="hero__wrapper">
+						<div class="hero__content">
+							<h1 class="hero__title">
+								masons
+								<span>
+									branding
+								</span>
+								wordshop
+							</h1>
+							<p class="hero__txt">
+								Высококачественная печать Брендирование одежды и аксессуаров
+							</p>
+							<button class="hero__btn btn" type="btn">
+								Каталог
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+      
+       <section class="section services">
         <div class="services__container">
           <h2 class="services__title section__title">
             Наши
@@ -177,140 +177,140 @@
         </div>
       </section>
 
-      <section class="video section">
-        <div class="video__container">
-          <div class="video__top">
-            <h2 class="video__title section__title section__title--small">
-              Ещё есть <span>сомнения?</span>
-            </h2>
-            <p class="video__text section__subtitle">
-              Тогда посмотри это видео и сам всё поймёшь
-            </p>
-          </div>
-          <div class="video__content">
-            <iframe class="video__play" height="514" src="https://www.youtube.com/embed/2Vo0lhfE8Jo"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-        </div>
-      </section>
+			<section class="video section">
+				<div class="video__container">
+					<div class="video__top">
+						<h2 class="video__title section__title section__title--small">
+							Ещё есть <span>сомнения?</span>
+						</h2>
+						<p class="video__text section__subtitle">
+							Тогда посмотри это видео и сам всё поймёшь
+						</p>
+					</div>
+					<div class="video__content">
+						<iframe class="video__play" height="514" src="https://www.youtube.com/embed/2Vo0lhfE8Jo"
+							title="YouTube video player" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen></iframe>
+					</div>
+				</div>
+			</section>
 
-      <section class="contact section">
-        <div class="contact__container">
+			<section class="contact section">
+				<div class="contact__container">
 
-          <div class="contact__top">
-            <h2 class="contact__title section__title">
-              Свяжитесь с <span>нами</span>
-            </h2>
-            <p class="contact__text section__subtitle">
-              Это бысто и удобно
-            </p>
-          </div>
+					<div class="contact__top">
+						<h2 class="contact__title section__title">
+							Свяжитесь с <span>нами</span>
+						</h2>
+						<p class="contact__text section__subtitle">
+							Это бысто и удобно
+						</p>
+					</div>
 
-          <div class="contact__content">
-            <div class="contact__wrap">
-              <form class="contact__form form-contact" action="#">
-                <fieldset class="form-contact__wrap">
-                  <label class="sr-only" for="your-name">
-                    Ваше имя
-                  </label>
-                  <input class="form-contact__input input" id="your-name" autocomplete="off" type="text" name="form[]"
-                    data-error="Ошибка" placeholder="Ваше имя" required>
-                </fieldset>
-                <fieldset class="form-contact__wrap">
-                  <label class="sr-only" for="your-email">
-                    Email
-                  </label>
-                  <input class="form-contact__input input" id="your-email" autocomplete="off" type="email" name="form[]"
-                    data-error="Ошибка" placeholder="Email" required>
-                </fieldset>
-                <fieldset class="form-contact__wrap">
-                  <label class="sr-only" for="your-phone">
-                    Телефон
-                  </label>
-                  <input class="form-contact__input input" id="your-phone" autocomplete="off" type="number"
-                    name="form[]" data-error="Ошибка" placeholder="Телефон" required>
-                </fieldset>
-                <fieldset class="form-contact__wrap">
-                  <label class="sr-only" for="your-text">
-                    Применчания
-                  </label>
-                  <textarea class="form-contact__input input" id="your-text" autocomplete="off" name="form[]"
-                    placeholder="Применчания" data-error="Ошибка"></textarea>
-                </fieldset>
-                <button type="submit" class="form-contact__btn btn button">Отправить</button>
-              </form>
-              <ul class="contact__social social">
-                <li class="social__item">
-                  <a class="social__link" href="#">
-                    <span class="sr-only">
-                      переход в наш телеграм
-                    </span>
-                    <svg>
-                      <use xlink:href="@img/icons/icons.svg#telegram"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a class="social__link" href="#">
-                    <span class="sr-only">
-                      переход в наш инстаграм
-                    </span>
-                    <svg>
-                      <use xlink:href="@img/icons/icons.svg#viber"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <img class="contact__img" src="@img/contact/map.jpg" alt="map" width="535" height="500">
-          </div>
-          <div class="contact__info info-contact">
-            <ul class="info-contact__list">
-              <li class="info-contact__item info-contact__item--schedule">
-                <h3 class="info-contact__title">
-                  График
-                </h3>
-                <span class="info-contact__text">
-                  ПН-ПТ:
-                </span>
-                <span class="info-contact__text">
-                  9:00 - 18:00
-                </span>
-              </li>
-              <li class="info-contact__item info-contact__item--map">
-                <h3 class="info-contact__title">
-                  Карта
-                </h3>
-                <address class="info-contact__address">
-                  <span class="info-contact__text">
-                    г. Киев
-                  </span>
-                  <span class="info-contact__text">
-                    ул. Название
-                  </span>
-                </address>
-              </li>
-              <li class="info-contact__item info-contact__item--contact">
-                <h3 class="info-contact__title">
-                  Контакты
-                </h3>
-                <a href="tel:380999999999" class="info-contact__link info-contact__text">
-                  +38(099)-999-99-99
-                </a>
-                <a href="email:gmailexamp@gmail.com" class="info-contact__link info-contact__text">
-                  gmailexamp@gmail.com
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-    @@include('html/_footer.htm',{})
-  </div>
-  @@include('html/_js.htm',{})
+					<div class="contact__content">
+						<div class="contact__wrap">
+							<form class="contact__form form-contact" action="#">
+								<fieldset class="form-contact__wrap">
+									<label class="sr-only" for="your-name">
+										Ваше имя
+									</label>
+									<input class="form-contact__input input" id="your-name" autocomplete="off"
+										type="text" name="form[]" data-error="Ошибка" placeholder="Ваше имя" required>
+								</fieldset>
+								<fieldset class="form-contact__wrap">
+									<label class="sr-only" for="your-email">
+										Email
+									</label>
+									<input class="form-contact__input input" id="your-email" autocomplete="off"
+										type="email" name="form[]" data-error="Ошибка" placeholder="Email" required>
+								</fieldset>
+								<fieldset class="form-contact__wrap">
+									<label class="sr-only" for="your-phone">
+										Телефон
+									</label>
+									<input class="form-contact__input input" id="your-phone" autocomplete="off"
+										type="number" name="form[]" data-error="Ошибка" placeholder="Телефон" required>
+								</fieldset>
+								<fieldset class="form-contact__wrap">
+									<label class="sr-only" for="your-text">
+										Применчания
+									</label>
+									<textarea class="form-contact__input input" id="your-text" autocomplete="off"
+										name="form[]" placeholder="Применчания" data-error="Ошибка"></textarea>
+								</fieldset>
+								<button type="submit" class="form-contact__btn btn button">Отправить</button>
+							</form>
+							<ul class="contact__social social">
+								<li class="social__item">
+									<a class="social__link" href="#">
+										<span class="sr-only">
+											переход в наш телеграм
+										</span>
+										<svg>
+											<use xlink:href="@img/icons/icons.svg#telegram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link" href="#">
+										<span class="sr-only">
+											переход в наш инстаграм
+										</span>
+										<svg>
+											<use xlink:href="@img/icons/icons.svg#viber"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<img class="contact__img" src="@img/contact/map.jpg" alt="map" width="535" height="500">
+					</div>
+					<div class="contact__info info-contact">
+						<ul class="info-contact__list">
+							<li class="info-contact__item info-contact__item--schedule">
+								<h3 class="info-contact__title">
+									График
+								</h3>
+								<span class="info-contact__text">
+									ПН-ПТ:
+								</span>
+								<span class="info-contact__text">
+									9:00 - 18:00
+								</span>
+							</li>
+							<li class="info-contact__item info-contact__item--map">
+								<h3 class="info-contact__title">
+									Карта
+								</h3>
+								<address class="info-contact__address">
+									<span class="info-contact__text">
+										г. Киев
+									</span>
+									<span class="info-contact__text">
+										ул. Название
+									</span>
+								</address>
+							</li>
+							<li class="info-contact__item info-contact__item--contact">
+								<h3 class="info-contact__title">
+									Контакты
+								</h3>
+								<a href="tel:380999999999" class="info-contact__link info-contact__text">
+									+38(099)-999-99-99
+								</a>
+								<a href="email:gmailexamp@gmail.com" class="info-contact__link info-contact__text">
+									gmailexamp@gmail.com
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
 </body>
 
 </html>

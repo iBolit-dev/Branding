@@ -18,6 +18,8 @@ window.addEventListener('scroll', () => {
   }
 });
 
+
+
 let button = document.querySelector('.search__icon');
 let user = document.querySelector('.search');
 
@@ -39,6 +41,31 @@ document.addEventListener('click', e => {
 
   if (!its_users && !its_button && users_is_active) {
     toggleSearch();
+  }
+})
+
+
+
+let logo = document.querySelector('.header__logo');
+
+const toggleLogo = () => {
+  logo.classList.toggle('active');
+}
+
+button.addEventListener('click', e => {
+  e.stopPropagation();
+
+  toggleLogo();
+});
+
+document.addEventListener('click', e => {
+  let target = e.target;
+  let its_logo = target == user || user.contains(target);
+  let its_button = target == button;
+  let logo_is_active = logo.classList.contains('active');
+
+  if (!its_logo && !its_button && logo_is_active) {
+    toggleLogo();
   }
 })
 
