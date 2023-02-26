@@ -7,21 +7,42 @@
   left: 0;
   padding-top: rem(20);
   padding-bottom: rem(30);
-  transition: background-color 0.5s ease-in-out;
+  transition: opacity 0.5s, background-color 0.5s, padding 0.5s ease-in-out;
 
-  &.scroll {
-    background-color: #070707;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 2;
   }
 
-  @media (max-width:$mobile) {
+  &.scroll {
+    @media (min-width: $tablet) {
+      background-color: #202020;
+      opacity: 0.9;
+      padding-top: 10px;
+      padding-bottom: 15px;
+    }
+
+    @media (max-width: $tablet) {
+      opacity: 0.9;
+      background-color: #202020;
+      padding: 7px 0;
+    }
+  }
+
+  @media (max-width: $tablet) {
     padding-top: rem(0);
     padding-bottom: rem(0);
   }
 
-
   &__wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     padding: rem(15) rem(0);
     @include adaptiveValue("margin-left", 55, 0);
@@ -29,8 +50,15 @@
   }
 
   &__logo {
+    justify-self: center;
     position: relative;
     z-index: 5;
+    transition: opacity 0.5s;
+    opacity: 1;
+    &.active {
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
   }
 
   &__link {
@@ -55,6 +83,7 @@
   &__right {
     display: flex;
     align-items: center;
+    justify-self: flex-end;
   }
 
   &__menu {
@@ -71,7 +100,7 @@
     display: flex;
     align-items: center;
 
-    justify-content: space-between;
+    // justify-content: space-between;
   }
 
   &__icon {
@@ -86,6 +115,7 @@
     border: rem(1) solid #fff;
     border-radius: rem(15);
     padding-left: rem(32);
+    margin-right: rem(20);
     width: rem(225);
     height: rem(30);
     background-color: transparent;
@@ -98,7 +128,7 @@
       color: #fff;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       padding-left: rem(45);
       width: rem(0);
       transition: width 0.3s;
@@ -120,6 +150,40 @@
     width: rem(15);
     height: rem(15);
     fill: #fff;
+  }
+}
+
+.search-active {
+  @media (max-width: $tablet) {
+    position: absolute;
+    width: 95%;
+    height: rem(60);
+    top: rem(12);
+    left: rem(15);
+    background-color: #202020;
+    z-index: 10;
+    padding-top: rem(15);
+    padding-bottom: rem(15);
+
+    .search__input {
+      // padding-left: rem(45);
+      width: 85%;
+      transition: width 0.3s;
+    }
+
+    .search__icon {
+      top: rem(25);
+    }
+
+    .search__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 25px;
+      border: 1px solid $yellowColor;
+      border-radius: rem(25);
+    }
   }
 }
 
@@ -170,7 +234,7 @@
     display: flex;
     z-index: 2;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       @include adaptiveValue("margin-right", 20, 10);
     }
 
@@ -195,7 +259,7 @@
     }
   }
 
-  @media (max-width: $mobile) {
+  @media (max-width: $tablet) {
     z-index: 2;
     position: absolute;
     left: rem(20);
@@ -208,8 +272,11 @@
 }
 
 .menu {
+  z-index: 10;
+  position: relative;
+
   &__body {
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       position: fixed;
       top: rem(70);
       left: -100%;
@@ -223,17 +290,6 @@
       padding: rem(30) rem(15) rem(30) rem(15);
       transition: left 0.5s;
 
-      &::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: rem(70);
-        background-color: #202020;
-        z-index: 2;
-      }
-
       .menu-open & {
         left: 0;
       }
@@ -244,19 +300,19 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    @include adaptiveValue("column-gap", 50, 25);
+    // @include adaptiveValue("column-gap", 50, 25);
+    @include adaptiveValue("column-gap", 50, 15, 0, 1520, 768);
+
     row-gap: rem(30);
     font-weight: 300;
     font-size: rem(18);
     line-height: math.div(22, 18);
     color: #fff;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       flex-direction: column;
       margin: rem(0) rem(30) rem(0) rem(0);
     }
-  }
-  &__item {
   }
 
   &__item--active {
@@ -277,7 +333,7 @@
 
   &__link {
     display: inline-block;
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       font-size: rem(24);
     }
 
@@ -291,45 +347,13 @@
   }
 }
 
-.search-active {
-  @media (max-width: $mobile) {
-    position: absolute;
-    width: 95%;
-    height: rem(60);
-    top: rem(12);
-    left: rem(15);
-    background-color: #202020;
-    z-index: 10;
-    padding-top: rem(15);
-    padding-bottom: rem(15);
-
-    .search__input {
-      padding-left: rem(45);
-      width: 85%;
-      transition: width 0.3s;
-    }
-
-    .search__icon {
-      top: rem(25);
-    }
-
-    .search__btn {
-      display: block;
-      width: 40px;
-      height: 30px;
-      border: 1px solid $yellowColor;
-      border-radius: rem(25);
-    }
-  }
-}
-
 //====================================================================================================
 
 //Burger
 .icon-menu {
   display: none;
 
-  @media (max-width: $mobile) {
+  @media (max-width: $tablet) {
     display: block;
     position: relative;
     margin-left: auto;
