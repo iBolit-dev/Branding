@@ -1,6 +1,7 @@
 .hero {
   background: url("@img/firstSection/bg.jpg") center center no-repeat;
   background-size: cover;
+  @include adaptiveValue("margin-bottom", 152, 60);
 
   &__wrapper {
     position: relative;

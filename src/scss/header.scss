@@ -57,6 +57,7 @@
     z-index: 5;
     transition: opacity 0.5s;
     opacity: 1;
+
     &.active {
       opacity: 0;
       transition: opacity 0.5s;
@@ -79,8 +80,7 @@
     @include size(184, 63, 117, 40);
   }
 
-  &__logo-img {
-  }
+  &__logo-img {}
 
   &__right {
     display: flex;
@@ -191,6 +191,8 @@
 
 .language {
   @include adaptiveValue("margin-right", 33, 0);
+  position: relative;
+  z-index: 10;
 
   &__wrapper {
     display: grid;
@@ -333,6 +335,7 @@
 
   &__link {
     display: inline-block;
+
     @media (max-width: $tablet) {
       font-size: rem(24);
     }
@@ -395,8 +398,7 @@
       }
 
       &::before,
-      &::after {
-      }
+      &::after {}
 
       &::before {
         top: calc(50% - rem(1));

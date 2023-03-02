@@ -101,3 +101,30 @@ buttonsCategories.forEach(button => {
     }
   });
 });
+
+const btn = document.querySelector('.services__btn-show');
+const list = document.querySelector('.services__list');
+const items = document.querySelectorAll('.services__item');
+const maxVisible = 2;
+
+if (btn && list && items) {
+  btn.addEventListener('click', () => {
+    const hiddenItems = Array.from(items).slice(maxVisible);
+    const isHidden = hiddenItems.some(item => item.classList.contains('hidden'));
+    hiddenItems.forEach(item => {
+      if (isHidden) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+    btn.textContent = isHidden ? 'Скрыть' : 'Показать все';
+  });
+
+  // hide all items except the first `maxVisible` ones
+  items.forEach((item, index) => {
+    if (index >= maxVisible) {
+      item.classList.add('hidden');
+    }
+  });
+}
