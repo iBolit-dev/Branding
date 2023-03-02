@@ -42,6 +42,8 @@
 
   &__wrapper {
     display: grid;
+    position: relative;
+    z-index: 15;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     padding: rem(15) rem(0);
@@ -300,7 +302,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    // @include adaptiveValue("column-gap", 50, 25);
     @include adaptiveValue("column-gap", 50, 15, 0, 1520, 768);
 
     row-gap: rem(30);
@@ -311,7 +312,6 @@
 
     @media (max-width: $tablet) {
       flex-direction: column;
-      margin: rem(0) rem(30) rem(0) rem(0);
     }
   }
 

@@ -25,42 +25,130 @@ import "../../scss/base/swiper.scss";
 
 // первый слайдер
 // Ініціалізація слайдерів
+
+
+
+// Список слайдерів
+// Перевіряємо, чи є слайдер на сторінці
+// Створюємо слайдер
 function initSliders() {
-	// Список слайдерів
-	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.review__slider')) { // Вказуємо склас потрібного слайдера
+	new Swiper('.review__slider', { // Вказуємо склас потрібного слайдера
+		// Підключаємо модулі слайдера
+		// для конкретного випадку
+		modules: [Navigation, EffectFade, Pagination],
+		observer: true,
+		centeredSlides: true,
+		observeParents: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		allowTouchMove: false,
+
+		// autoHeight: true,
+
+		//touchRatio: 0,
+		//simulateTouch: false,
+		// loop: true,
+		//preloadImages: false,
+		// lazy: true,
+
+		// Ефекти
+		effect: 'fade',
+		speed: 500,
+
+		// autoplay: {
+		// 	delay: 3000,
+		// 	disableOnInteraction: false,
+		// },
+
+		// Пагінація
+		pagination: {
+			el: '.review__pagination',
+			clickable: true,
+		},
+
+		// Скроллбар
+		/*
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true,
+		},
+		*/
+
+		// Кнопки "вліво/вправо"
+		navigation: {
+			prevEl: '.review__swiper-btn--left',
+			nextEl: '.review__swiper-btn--right',
+		},
+		/*
+		
+		// Брейкпоінти
+		breakpoints: {
+			640: {
+				slidesPerView: 1,
+				spaceBetween: 0,
+				autoHeight: true,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+			1268: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+		},
+		*/
+		// Події
+		on: {
+
+		}
+	});
+}
+
+function functionName() {
+	if (window.innerWidth <= 769) {
+		// Список слайдерів
+		// Перевіряємо, чи є слайдер на сторінці
 		// Створюємо слайдер
-		new Swiper('.review__slider', { // Вказуємо склас потрібного слайдера
+		new Swiper('.content-catalog', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
-			modules: [Navigation, EffectFade, Pagination],
-			observer: true,
-			centeredSlides: true,
-			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			// autoHeight: true,
+			modules: [Navigation],
+			// observer: true,
+			// observeParents: true,
+			slidesPerView: 2,
+			spaceBetween: 30,
+			autoHeight: true,
+			allowTouchMove: false,
 
+			// speed: 800,
+			// allowTouchMove: true,
 			//touchRatio: 0,
 			//simulateTouch: false,
-			// loop: true,
+			//loop: true,
 			//preloadImages: false,
-			// lazy: true,
+			//lazy: true,
 
+			/*
 			// Ефекти
 			effect: 'fade',
-			speed: 500,
-
-			// autoplay: {
-			// 	delay: 3000,
-			// 	disableOnInteraction: false,
-			// },
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
 
 			// Пагінація
+			/*
 			pagination: {
-				el: '.review__pagination',
+				el: '.swiper-pagination',
 				clickable: true,
 			},
+			*/
 
 			// Скроллбар
 			/*
@@ -72,32 +160,29 @@ function initSliders() {
 
 			// Кнопки "вліво/вправо"
 			navigation: {
-				prevEl: '.review__swiper-btn--left',
-				nextEl: '.review__swiper-btn--right',
+				prevEl: '.content-catalog__btn--left',
+				nextEl: '.content-catalog__btn--right',
 			},
-			/*
-
 			// Брейкпоінти
 			breakpoints: {
-				640: {
+				320: {
 					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
+					paceBetween: 20,
+					navigation: {
+						prevEl: '.content-catalog__btn--left',
+						nextEl: '.content-catalog__btn--right',
+					},
 				},
-				768: {
+				640: {
 					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
 					spaceBetween: 30,
 				},
+				// 768: {
+				// 	slidesPerView: 2,
+				// 	spaceBetween: 20,
+				// },
+
 			},
-			*/
 			// Події
 			on: {
 
@@ -105,6 +190,8 @@ function initSliders() {
 		});
 	}
 }
+// window.onresize = functionName;
+window.onload = functionName;
 
 //второй
 // // Ініціалізація слайдерів
