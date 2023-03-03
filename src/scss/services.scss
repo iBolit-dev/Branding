@@ -76,6 +76,14 @@
     font-size: rem(16);
     line-height: math.div(20, 16);
     margin-bottom: rem(45);
+    transition: background-color 0.3s, color 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #ffc700;
+        color: #171717;
+      }
+    }
   }
 
   &__img {
