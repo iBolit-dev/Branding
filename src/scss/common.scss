@@ -2,14 +2,14 @@
 
 .section {
     &__title {
-        @include adaptiveValue("font-size", 72, 28);
+        @include adaptiveValue("font-size", 55, 28);
         font-weight: 700;
         line-height: math.div(88, 72);
         color: #fff;
 
         &--small {
             font-weight: 600;
-            @include adaptiveValue("font-size", 48, 25);
+            @include adaptiveValue("font-size", 35, 25);
             line-height: math.div(59, 48);
 
             @include hl {
@@ -27,7 +27,7 @@
     }
 
     &__subtitle {
-        @include adaptiveValue("font-size", 32, 20);
+        @include adaptiveValue("font-size", 27, 20);
         font-weight: 300;
         line-height: math.div(39, 32);
         color: $subtitleGrey;

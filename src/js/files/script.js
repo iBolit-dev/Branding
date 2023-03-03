@@ -6,6 +6,9 @@ import {
 import {
   flsModules
 } from "./modules.js";
+import mixitup from 'mixitup';
+
+var mixer = mixitup('.goods-sales');
 
 const scrollHeader = document.querySelector('.header');
 const scrollHeight = 1; // высота, на которой добавляется класс

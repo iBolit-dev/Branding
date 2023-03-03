@@ -1,11 +1,11 @@
 .catalog {
-    @include adaptiveValue("margin-bottom", 130, 40);
+    @include adaptiveValue("margin-bottom", 70, 40);
 
     // .catalog__top
 
     &__top {
         text-align: center;
-        @include adaptiveValue("margin-bottom", 130, 45, 0, 1920, 320);
+        @include adaptiveValue("margin-bottom", 80, 45, 0, 1920, 320);
     }
 }
 
@@ -22,9 +22,12 @@
     &__list {
         @media (min-width: em(769)) {
             display: grid !important;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             column-gap: rem(29);
             row-gap: rem(29);
+        }
+        @media (min-width: em(992)) {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 
