@@ -1,0 +1,123 @@
+.review {
+    text-align: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 50%;
+        background-color: $yellowColor;
+        width: 100%;
+        top: 35%;
+        transform: skewY(10deg);
+        right: 0;
+        left: 0;
+    }
+
+    @include adaptiveValue("margin-bottom", 185, 40, 0, 1920, 320);
+
+    // .review__top
+
+    &__top {
+        @include adaptiveValue("margin-bottom", 125, 40, 0, 1920, 320);
+    }
+
+    // .review__wrap
+
+    &__wrap {
+        position: relative;
+
+        @media (max-width: $tablet) {
+            margin-bottom: 45px;
+        }
+    }
+
+    // .review__slider
+
+    &__slider {
+        padding: 20px;
+        border-radius: 20px;
+        background-image: url("@img/reviews/phone.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    // .review__slide
+
+    &__slide {
+        img {
+            border-radius: 20px;
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    // .review__swiper-btn
+
+    &__swiper-btn {
+        background-image: url("@img/reviews/arrow.svg");
+        background-size: 20px;
+        background-repeat: no-repeat;
+        @include adaptiveValue("width", 100, 40);
+        @include adaptiveValue("height", 100, 40);
+        background-position: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        background-color: #000;
+        transition: opacity 0.3s;
+
+        &--left {
+            transform: rotate(180deg) translate(50%, 50%);
+            left: 20%;
+
+            @media (max-width: $mobile) {
+                left: 10%;
+            }
+        }
+
+        &--right {
+            transform: translate(50%, -50%);
+            right: 20%;
+
+            @media (max-width: $mobile) {
+                right: 10%;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        @media (max-width: $mobile) {
+            background-color: transparent;
+        }
+    }
+
+    &__pagination {
+        @media (max-width: $tablet) {
+            display: flex;
+            justify-content: center;
+            column-gap: rem(30);
+            height: 40px;
+            align-items: center;
+
+            .swiper-pagination-bullet {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background-color: rgb(255 218 88 / 54%);
+                transition: width 0.4s, height 0.4s, background-color 0.3s;
+            }
+
+            .swiper-pagination-bullet-active {
+                width: 30px;
+                height: 30px;
+                background-color: rgba(255, 200, 0, 0.952);
+            }
+        }
+    }
+}

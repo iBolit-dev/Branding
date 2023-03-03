@@ -1,0 +1,31 @@
+.video {
+    @include adaptiveValue("margin-bottom", 160, 40, 0, 1920, 768);
+
+    @include hl {
+        margin-bottom: rem(40);
+    }
+
+    // .video__top
+
+    &__top {
+        @include adaptiveValue("margin-bottom", 40, 20);
+    }
+
+    // .video__content
+
+    &__content {
+        max-width: 915px;
+        @include adaptiveValue("height", 515, 215);
+        margin: 0 auto;
+
+        @include hl {
+            width: rem(420);
+            height: rem(250);
+        }
+    }
+
+    &__play {
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -6,16 +6,16 @@
   &__wrapper {
     position: relative;
     @include adaptiveValue("padding-top", 297, 100);
-    @include adaptiveValue("padding-bottom", 229, 40, 0, 1920, 320);
+    @include adaptiveValue("padding-bottom", 150, 40, 0, 1920, 320);
     &::before {
       content: "";
       background: url("@img/firstSection/man.png") center bottom no-repeat;
       background-size: contain;
       position: absolute;
       right: 0;
-      width: 63%;
+      width: 81%;
       height: 100%;
-      bottom: 20%;
+      bottom: 0;
     }
 
     @media (max-width: $pc) {
