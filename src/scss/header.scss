@@ -59,10 +59,7 @@
     opacity: 1;
 
     &.active {
-
-      // ===================================================================
       @media (max-width:$tablet) {
-
         opacity: 0;
         transition: opacity 0.5s;
       }
@@ -171,6 +168,17 @@
     z-index: 10;
     padding-top: rem(15);
     padding-bottom: rem(15);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: rem(-15);
+      left: -100%;
+      right: -100%;
+      height: rem(75);
+      background-color: #202020;
+      z-index: -1;
+    }
 
     .search__input {
       // padding-left: rem(45);
